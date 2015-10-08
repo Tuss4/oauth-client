@@ -1,16 +1,16 @@
 package main
 
 import (
-  "net/http"
-  "log"
-  "fmt"
+	"fmt"
+	"log"
+	"net/http"
 )
 
 var (
-    port = ":8000"
+	port = ":8000"
 )
 
-func main(){
-  fmt.Println("Server running on port", port)
-  log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("."))))
+func main() {
+	fmt.Println("Server running on port", port)
+	log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("."))))
 }
